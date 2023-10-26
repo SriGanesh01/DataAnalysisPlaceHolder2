@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
     <title>Document</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <img src="http://127.0.0.1:5000/static/Women%20Sitting%20On%20Ground.jpg" height="270">
     <div>
+        <h1>The World Of Cryptocurrencies</h1>
+        <img src="{{url_for('static',filename='images/Cryptoimg1.css')}}" height="270">
         <p>
             I am a paragraph of text.
         </p>
