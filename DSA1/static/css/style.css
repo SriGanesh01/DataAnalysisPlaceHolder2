@@ -1,7 +1,63 @@
-h1{
-    color: red;   
+body {
+    background-color:rgb(52, 5, 52);
+    color: rgb(156, 168, 168);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
 }
 
-body{
-    background-color: aquamarine;
+.OuterBody {
+    width: calc(100% - 150px);
+    height: calc(100% - 150px);
+    background-color: rgb(122, 69, 122);
+    box-sizing: border-box;
+    border-radius: 120px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+}
+
+.BackBoard {
+    display: inline-grid;
+    grid-template-rows: repeat(5, 50px);
+    grid-template-columns: repeat(9, 50px);
+    border: 2px solid rgb(41, 0, 22);
+    border-radius: 7px;
+    gap: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(41, 0, 22);
+    color: rgb(132, 96, 108);
+}
+
+.SingleBox{
+    background-color: black;
+    text-align: center;
+    padding-top: 12px;
+    background-color: rgb(255, 217, 230);
+}
+
+.SingleBox:hover{
+    background-color: rgb(132, 96, 108);
+    color: rgb(255, 217, 230);
+    padding-top: 0px;
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+.SingleBoxEmpty{
+    background-color: ghostwhite;
+}
+
+.SingleBoxEmpty:hover{
+    background-color: rgb(241, 211, 243);
+}
+
+.AboutProject{
+    padding-top: 450px;
+    text-align: center;
+    color: black;
 }

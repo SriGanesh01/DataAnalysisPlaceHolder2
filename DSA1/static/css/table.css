@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(52, 5, 52);
+    color: rgb(156, 168, 168);
+}
+
+table {
+    color: rgb(0, 0, 0);
+    background-color: rgb(239, 255, 243);
+    border: none;
+    padding: 7px;
+}
+th {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border: none;
+    padding: 7px;
+}
+tr:nth-child(even) td:nth-child(odd),
+tr:nth-child(odd) td:nth-child(even) {
+    background-color: #ffc0cb;
+    border: none;
+    padding: 7px;
+}
+tr:nth-child(odd) td:nth-child(odd),
+tr:nth-child(even) td:nth-child(even) {
+    background-color: rgb(135, 206, 250);
+    border: none;
+    padding: 7px;
+}
