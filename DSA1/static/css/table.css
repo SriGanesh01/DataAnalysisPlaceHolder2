@@ -1,17 +1,18 @@
 body{
     background-color: rgb(52, 5, 52);
     color: rgb(156, 168, 168);
+    padding-top: 75px;
 }
 
 table {
     color: rgb(0, 0, 0);
-    background-color: rgb(239, 255, 243);
+    background-color: rgb(52, 5, 52);
     border: none;
     padding: 7px;
 }
 th {
     color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(71, 5, 104);
     border: none;
     padding: 7px;
 }

@@ -11,16 +11,28 @@ def index():
 def about():
     return render_template('about.html', x = Datas.x, z = Datas.CryptoData1_CC[0].head(1))
 
-@app.route('/table')
-@app.route('/datas')
-def table():
+@app.route('/tabletop10')
+@app.route('/datastop10')
+def tabletop10():
     tables = []
-    tableName = Datas.CryptoData1_UC_M_S
-    tableName.insert(0, '')
     for dataframe in Datas.CryptoData1_CC:
         top_10_rows = dataframe.head(10)
         html_table = top_10_rows.to_html(index=False)
         tables.append(html_table)
-    return render_template('datas.html', tables=tables, titles=tableName)
+    return render_template('datas.html', tables=tables, titles=['','binance-coin', 'bitcoin', 'bitcoin-cash', 'bitcoin-sv', 'cardano', 'eos', 'ethereum', 'litecoin', 'stellar', 'tether', 'tezos', 'xrp'])
+
+@app.route('/tablebottom10')
+@app.route('/datasbottom10')
+def tablebottom10():
+    tables = []
+    for dataframe in Datas.CryptoData1_CC:
+        top_10_rows = dataframe.tail(10)
+        html_table = top_10_rows.to_html(index=False)
+        tables.append(html_table)
+    return render_template('datas.html', tables=tables, titles=['','binance-coin', 'bitcoin', 'bitcoin-cash', 'bitcoin-sv', 'cardano', 'eos', 'ethereum', 'litecoin', 'stellar', 'tether', 'tezos', 'xrp'])
+
+@app.route('/analysis')
+def analysis():
+    return render_template('analysis.html')
 
 app.run(debug=True)

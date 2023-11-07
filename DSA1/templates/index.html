@@ -9,6 +9,18 @@
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
+    <div class="NavigationBar">
+        <a class="NavButton" href="{{url_for('about')}}">About Crypto</a>
+        <div class="Dropdown">
+            <button class="NavButton">Datas</button>
+            <div class="DropdownContent">
+                <a href="{{url_for('tabletop10')}}">Top 10 Values</a>
+                <a href="{{url_for('tablebottom10')}}">Bottom 10 Values</a>
+            </div>
+        </div>
+        <a class="NavButton" href="{{url_for('analysis')}}">Analysis</a>
+    </div>
+    
     <div class="OuterBody">
         <div class="BackBoard">
             <div style="border-top-left-radius: 5px; background-color: darkgrey;" class="SingleBox SingleBoxEmpty"></div>
@@ -62,7 +74,5 @@
             <p>Hi</p>
         </div>
     </div>
-
-
 </body>
 </html>
