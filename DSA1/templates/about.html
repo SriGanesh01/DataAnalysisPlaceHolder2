@@ -4,12 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='css/abtsty.css')}}">
-    <title>Document</title>
+    <title>About Crypto</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
-    <p>Hello About</p>
-    <p>{{z}}</p>
+    <div class="NavigationBar">
+        <a class="NavButton" href="{{url_for('index')}}">Home</a>
+    </div>
+    <div class="container">
+        <h1>About Crypto</h1>
+        <img class="CryptoImage" src="{{url_for('static',filename='images/Cryptoimg1.jpeg')}}" alt="Crypto image" width="700px">
+        <p>Cryptocurrency is a digital or virtual currency that uses cryptography for security. It is decentralized, meaning it is not controlled by any government or financial institution. <a href="https://en.wikipedia.org/wiki/Cryptocurrency" target="_blank">Bitcoin</a> is the first and most well-known cryptocurrency, but there are now thousands of different cryptocurrencies available.</p>
+        <p>Cryptocurrencies are created through a process called mining, which involves solving complex mathematical equations. Transactions are recorded on a public ledger called a <a href="https://en.wikipedia.org/wiki/Blockchain" target="_blank">blockchain</a>, which is maintained by a network of computers around the world.</p>
+        <p>While cryptocurrencies offer many potential benefits, such as increased privacy and security, they also come with risks. The value of cryptocurrencies can be highly volatile, and they are not backed by any government or financial institution. It is important to do your own research and understand the risks before investing in cryptocurrency.</p>
+        <h2>Advantages of Cryptocurrency</h2>
+        <ul>
+            <li>Decentralized: Cryptocurrencies are not controlled by any government or financial institution, making them immune to government interference or manipulation.</li>
+            <li>Privacy: Transactions are anonymous and do not require personal information, providing increased privacy and security.</li>
+            <li>Lower transaction fees: Cryptocurrency transactions typically have lower fees compared to traditional financial transactions.</li>
+            <li>Global accessibility: Cryptocurrencies can be used anywhere in the world, making them a universal currency.</li>
+        </ul>
+        <h2>Disadvantages of Cryptocurrency</h2>
+        <ul>
+            <li>Volatility: The value of cryptocurrencies can be highly volatile, making them a risky investment.</li>
+            <li>Lack of regulation: Cryptocurrencies are not regulated by any government or financial institution, making them vulnerable to fraud and scams. Ponzi schemes and pump-and-dump schemes are common in the cryptocurrency world.</li>
+            <li>Irreversible transactions: Once a cryptocurrency transaction is made, it cannot be reversed, making it important to double-check all transactions before sending.</li>
+            <li>Complexity: Cryptocurrencies can be complex and difficult to understand, making it important to do your own research before investing.</li>
+        </ul>
+        <div class="conclusion">
+            <h2>Conclusion</h2>
+            <p>Cryptocurrency is a rapidly evolving technology that has the potential to revolutionize the way we think about money and financial transactions. While there are risks associated with investing in cryptocurrency, there are also many potential benefits. It is important to do your own research and understand the risks before investing, but for those who are willing to take the risk, cryptocurrency can be a rewarding investment.</p>
+        </div>
+    </div>
 </body>
 </html>

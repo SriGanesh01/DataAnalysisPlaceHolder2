@@ -1,0 +1,74 @@
+:root {
+    --primary-color: rgb(132, 96, 108);
+    --secondary-color: rgb(52, 5, 52);
+    --accent-color: rgb(156, 168, 168);
+}
+body {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: Arial, sans-serif;
+    padding-top: 75px;
+}
+h1 {
+    color: var(--accent-color);
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+p {
+    line-height: 1.5;
+}
+
+h2 {
+    color: var(--accent-color);
+    margin-top: 30px;
+}
+ul {
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+li {
+    line-height: 1.5;
+}
+
+.CryptoImage {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 7px;
+    padding-bottom: 11px;
+}
+
+.NavigationBar {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgb(41, 0, 22);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.NavButton {
+    background-color: rgb(41, 0, 22);
+    color: rgb(132, 96, 108);
+    border: 5px;
+    margin-right: 15px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.NavButton:hover {
+    background-color: rgb(204, 104, 137);
+    color: rgb(255, 217, 230);
+}
+
+.NavButton:hover:active{
+    opacity: 50%;
+}
