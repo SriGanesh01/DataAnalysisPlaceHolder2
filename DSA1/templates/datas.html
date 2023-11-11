@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='css/table.css')}}">
-    <title>Table Top 10</title>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/abtsty.css')}}">
+    <title>{{ route_name }}</title>
 </head>
 <body>
+    <div class="NavigationBar">
+        <a class="NavButton" href="{{url_for('index')}}">Home</a>
+    </div>
     <div align="center"> 
         <table> 
             <h1> 
-                {% for table in tables %} 
+                {% for table in tables %}
+                <h1>{{ route_name }}</h1>
                 <h2>{{titles[loop.index]}}</h2>                             
                 {{table|safe}} 
                 {% endfor %}      
