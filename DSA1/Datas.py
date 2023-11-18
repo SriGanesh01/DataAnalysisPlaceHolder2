@@ -6,6 +6,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn
+import pandas as pd
+import numpy as np
+import seaborn as sns
 
 ##Naming Conventions
 #UC = UnCleaned
@@ -76,15 +79,40 @@ for CryptoDataFrame3 in CryptoData1_UC_UM:
 #convert date to datetime
 for CryptoDataFrame4 in CryptoData1_UC_UM:
     CryptoDataFrame4['Date'] = pd.to_datetime(CryptoDataFrame4['Date'])
-    CryptoDataFrame4['Date'] = CryptoDataFrame4['Date'].dt.strftime('%d/%m/%Y')
+    CryptoDataFrame4['Date'] = pd.to_datetime(CryptoDataFrame4['Date'], format='%d/%m/%Y')
 
 #print(CryptoData1_UC_UM[0].head(10))
 
 for CryptoDataFrame5, currency in zip(CryptoData1_UC_UM, CryptoData1_UC_M_S):
-    CryptoDataFrame5.to_csv(f'DSA1\Data_Crypto_1\Cleaned_CryptoData1\{currency}_C.csv', index=False)
+    CryptoDataFrame5.to_csv(f'DSA1/Data_Crypto_1/Cleaned_CryptoData1/{currency}_C.csv', index=False)
 
 CryptoData1_CC = []
 for currency in CryptoData1_UC_M_S:
-    CryptoData1_CC.append(pd.read_csv(f'DSA1\Data_Crypto_1\Cleaned_CryptoData1\{currency}_C.csv'))
+    CryptoData1_CC.append(pd.read_csv(f'DSA1/Data_Crypto_1/Cleaned_CryptoData1/{currency}_C.csv'))
 
 #print(CryptoData1_CC[0].head(10))
+
+#Basic Stats
+for df, currency in zip(CryptoData1_CC, CryptoData1_UC_M_S):
+    print(f"\nSummary statistics for {currency}:")
+    print(df.describe())
+
+# Correlation Analysis
+Matrix_Names = []
+for df, currency in zip(CryptoData1_CC, CryptoData1_UC_M_S):
+    print(f"\nCorrelation matrix for {currency}:")
+    numeric_columns = df.select_dtypes(include=[np.number]).columns
+    correlation_matrix = df[numeric_columns].corr()
+
+    if not correlation_matrix.empty:
+        print(correlation_matrix)
+
+        sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+        plt.title(f'Correlation Matrix - {currency}')
+        save_path = f'DSA1/static/images/CorrImg/{currency}_Correlation_Matrix.png'
+        plt.savefig(save_path)
+        Matrix_Names.append(f'{currency}_Correlation_Matrix.png')
+
+lengthOf = (len(Matrix_Names))
+print(Matrix_Names)
+

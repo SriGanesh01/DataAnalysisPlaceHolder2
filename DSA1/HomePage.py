@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file
 import Datas
+
+
 
 app = Flask(__name__)
 
@@ -35,6 +37,7 @@ def tablebottom10():
 
 @app.route('/analysis')
 def analysis():
-    return render_template('analysis.html')
+    return render_template('analysis.html', currencies=Datas.CryptoData1_UC_M_S, Matrix_Names =Datas.Matrix_Names)
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

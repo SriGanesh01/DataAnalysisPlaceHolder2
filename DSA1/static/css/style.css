@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200vh;
+    height: 180vh;
     display: flex;
     flex-direction: column;
     padding-top: 75px;
@@ -121,11 +121,18 @@ body {
 }
 
 .AboutProject{
-    padding-top: 450px;
+    padding-top: 380px;
     text-align: center;
-    color: black;
-}
+    color: rgb(70, 10, 30);
+    font-size: large;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;}
 
 a {
     text-decoration: none;
   }
+
+.Tit {
+    color: beige;
+}

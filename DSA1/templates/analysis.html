@@ -5,16 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='css/abtsty.css')}}">
     <title>CryptoCurrencies</title>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
     <div class="NavigationBar">
-        <a class="NavButton" href="{{url_for('index')}}">Home</a>
+        <a class="NavButton" href="{{ url_for('index') }}">Home</a>
     </div>
 
     <div>
-        <p>Hello</p>
+        <h1>Cryptocurrency Analysis Insights</h1>
+        
+        <h2>Correlation Matrix:</h2>
+        <h3>General Insights:</h3>
+        <ul>
+            <li>Observe the correlation between price, volume, market cap, and other relevant variables.</li>
+            <li>Positive correlations may indicate simultaneous increases or decreases in different aspects.</li>
+            <li>Negative correlations may suggest an inverse relationship between variables.</li>
+        </ul>
+
+        <h3>Example Observations:</h3>
+        <ul>
+            <li><strong>Price vs. Volume:</strong> Positive correlation between price and volume implies higher trading volumes during price increases.</li>
+            <li><strong>Price vs. Market Cap:</strong> Strong positive correlation suggests that as the price increases, the market cap also tends to rise.</li>
+            <li><strong>Volume vs. Market Cap:</strong> Examine whether spikes in trading volume coincide with notable changes in market capitalization.</li>
+        </ul>
+
+        <h3>Identify Outliers:</h3>
+        <p>Look for outliers in the correlation matrix; these may indicate unusual behavior or events in specific periods.</p>
+
+        <h2>Interpretation of Heatmaps:</h2>
+        <h3>Color Gradients:</h3>
+        <ul>
+            <li>Darker shades indicate stronger correlations (either positive or negative).</li>
+            <li>Lighter shades suggest weaker or no significant correlation.</li>
+        </ul>
+
+        <h3>Patterns and Trends:</h3>
+        <p>Observe patterns in the heatmap. For instance, do certain cryptocurrencies exhibit higher correlations among specific variables?</p>
+
+        <h2>Recommendations:</h2>
+        <h3>Investment Insights:</h3>
+        <p>Consider correlations when making investment decisions. For instance, if two cryptocurrencies show a consistently high positive correlation, changes in one might predict changes in the other.</p>
+
+        <h3>Risk Management:</h3>
+        <p>Analyze correlations to diversify a cryptocurrency portfolio effectively. Cryptocurrencies with low or negative correlations might provide better risk management.</p>
+
+        <h3>Market Trends:</h3>
+        <p>Use correlation analysis to identify overall market trends. If multiple cryptocurrencies show similar patterns, it may indicate broader market forces at play.</p>
+
+        <p>Remember to customize these insights based on the actual data and trends observed in your cryptocurrency dataset.</p>
+
+        <h1>Analysis Graphs</h1>
+
+        <h2>Heatmaps</h2>
+
+        {% for matrix_name in Matrix_Names %}
+            <img src="{{ url_for('static', filename='images/CorrImg/' + matrix_name) }}"/>
+        {% endfor %}
     </div>
 </body>
 </html>
